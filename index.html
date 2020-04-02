@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>WeatherPy</title>
+    <link   rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+    <link   rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+            integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+            crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous">
+    </script>
+    <link   rel="stylesheet" 
+            href="Resources/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class="navbar-brand no-margins" href="index.html">WeatherPy</a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="data.html">
+                        <span class="glyphicon glyphicon-info-sign">
+                        </span>
+                        Data
+                    </a></li> 
+                    <li><a href="comparisons.html">
+                        <!--I know this is a cell phone signal but it looks like a graph so I am using it-->
+                        <span class="glyphicon glyphicon-signal">
+                        </span>
+                        Graphs Comparisons 
+                    </a></li>
+                    <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Plots
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="wind.html">Wind</a></li>
+                            <li><a href="temp.html">Temperature</a></li>
+                            <li><a href="cloudiness.html">Cloudiness</a></li>
+                            <li><a href="humidity.html">Humidity</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 border">
+                <h1>WeatherPy: Latitude and Weather</h1>
+                <p class=border>
+                    <img src="Resources/Latvswindspeed.png" alt="Latitude vs Wind Scatter">
+                    WeatherPy looks at and examines various weather factors by city 
+                    based on the latitude of the city.
+                    </br>
+                    </br>
+                    WeatherPy uses the <a href="https://github.com/wingchen/citipy">citipy Python library</a> 
+                    in order to find the closest city.  The dataset was around 1200 results, but after data cleaning 
+                    the number of cities was reduced to just under 550.  Data was cleaned using a try catch statement 
+                    and then the cleaned data was saved to a CSV and later imported into Pandas for ease of use.
+                    </br>
+                    Using the <a href="https://openweathermap.org/api">OpenWeatherMap API</a> WeatherPy gets the 
+                    the weather for each of the just under 550 cities.  The fancy Python library  
+                    <a href="https://github.com/crazycapivara/openweathermapy">openweathermapy</a> makes getting the weather data even easier.
+                    Then, using the library <a href="https://matplotlib.org/">matplotlib</a> WeatherPy takes the transformed data
+                    and creates scatter plots based on latitude vs. cloudiness, wind speed (mph), temperature, and humidity.
+                    The pictures on this website were directly saved from the WeatherPy project.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
